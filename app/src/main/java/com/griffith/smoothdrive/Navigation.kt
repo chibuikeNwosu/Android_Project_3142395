@@ -82,7 +82,7 @@ import androidx.navigation.compose.rememberNavController
                     )
                 }
                 composable(Routes.LIVE_TRIP) { PlaceholderScreen("Live Trip") }
-                composable(Routes.HISTORY) { PlaceholderScreen("Trip History") }
+                composable(Routes.HISTORY) { HistoryScreen(onTripClick = { }) }
                 composable(Routes.VEHICLES) { PlaceholderScreen("Vehicles") }
                 composable(Routes.REPORT) { PlaceholderScreen("Weekly Report") }
                 composable(Routes.SETTINGS) { SettingsScreen() }
