@@ -1,5 +1,8 @@
 package com.griffith.smoothdrive
 
+
+import android.content.Intent
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
@@ -38,6 +41,7 @@ import androidx.navigation.compose.rememberNavController
     @Composable
     fun SmoothDriveApp() {
         val navController = rememberNavController()
+        val context = LocalContext.current
         val backStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = backStackEntry?.destination?.route
 
@@ -82,7 +86,17 @@ import androidx.navigation.compose.rememberNavController
                     )
                 }
                 composable(Routes.LIVE_TRIP) { PlaceholderScreen("Live Trip") }
-                composable(Routes.HISTORY) { HistoryScreen(onTripClick = { }) }
+                composable(Routes.HISTORY) {
+                    HistoryScreen(onTripClick = { trip ->
+                        val intent = Intent(context, TripDetailActivity::class.java).apply {
+                            putExtra(TripDetailActivity.EXTRA_TITLE, trip.title)
+                            putExtra(TripDetailActivity.EXTRA_DATE, trip.date)
+                            putExtra(TripDetailActivity.EXTRA_DISTANCE, trip.distanceKm)
+                            putExtra(TripDetailActivity.EXTRA_EVENTS, trip.harshEvents)
+                        }
+                        context.startActivity(intent)
+                    })
+                }
                 composable(Routes.VEHICLES) { PlaceholderScreen("Vehicles") }
                 composable(Routes.REPORT) { PlaceholderScreen("Weekly Report") }
                 composable(Routes.SETTINGS) { SettingsScreen() }
