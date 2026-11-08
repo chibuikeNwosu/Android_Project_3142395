@@ -98,7 +98,7 @@ import androidx.navigation.compose.rememberNavController
                     })
                 }
                 composable(Routes.VEHICLES) { PlaceholderScreen("Vehicles") }
-                composable(Routes.REPORT) { PlaceholderScreen("Weekly Report") }
+                composable(Routes.REPORT) { WeeklyReportScreen() }
                 composable(Routes.SETTINGS) { SettingsScreen() }
             }
         }
