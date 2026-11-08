@@ -13,11 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Card
+import androidx.compose.runtime.remember
 
 
-    @Composable
+@Composable
     fun PlaceholderScreen(title: String, modifier: Modifier = Modifier) {
         Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(text = title, style = MaterialTheme.typography.headlineMedium)
@@ -37,20 +36,8 @@ fun DashboardScreen(
     ) {
         Text("Dashboard", style = MaterialTheme.typography.headlineMedium)
 
-        val totalKm = sampleTrips.sumOf { it.distanceKm }
-        val totalEvents = sampleTrips.sumOf { it.harshEvents }
-        val eventsPer100Km = if (totalKm > 0) totalEvents / totalKm * 100 else 0.0
-
-        Card(modifier = Modifier.fillMaxWidth()) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text("This week", style = MaterialTheme.typography.titleMedium)
-                Text(
-                    "${"%.1f".format(eventsPer100Km)} harsh events per 100 km",
-                    style = MaterialTheme.typography.headlineSmall
-                )
-                Text("${sampleTrips.size} trips · ${"%.1f".format(totalKm)} km")
-            }
-        }
+        val stats = remember { weeklyStatsOf(sampleTrips) }
+        WeeklySummaryCard(stats)
 
         Button(onClick = onStartTrip) { Text("Start Trip") }
         OutlinedButton(onClick = onOpenReport) { Text("Weekly Report") }

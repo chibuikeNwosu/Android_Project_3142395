@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.remember
 
 private const val TIPS_URL = "https://www.seai.ie/about/tools/energyacademy"
 
@@ -23,25 +24,19 @@ private const val TIPS_URL = "https://www.seai.ie/about/tools/energyacademy"
 fun WeeklyReportScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current
 
-    val totalKm = sampleTrips.sumOf { it.distanceKm }
-    val totalEvents = sampleTrips.sumOf { it.harshEvents }
-    val eventsPer100Km = if (totalKm > 0) totalEvents / totalKm * 100 else 0.0
-
+    val stats = remember { weeklyStatsOf(sampleTrips) }
     val reportText = "SmoothDrive weekly report\n" +
-            "Trips: ${sampleTrips.size}\n" +
-            "Distance: ${"%.1f".format(totalKm)} km\n" +
-            "Harsh events: $totalEvents\n" +
-            "Events per 100 km: ${"%.1f".format(eventsPer100Km)}"
+            "Trips: ${stats.trips}\n" +
+            "Distance: ${"%.1f".format(stats.distanceKm)} km\n" +
+            "Harsh events: ${stats.harshEvents}\n" +
+            "Events per 100 km: ${"%.1f".format(stats.eventsPer100Km)}"
 
     Column(
         modifier = modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text("Weekly Report", style = MaterialTheme.typography.headlineMedium)
-        Text("Trips: ${sampleTrips.size}")
-        Text("Distance: ${"%.1f".format(totalKm)} km")
-        Text("Harsh events: $totalEvents")
-        Text("Events per 100 km: ${"%.1f".format(eventsPer100Km)}")
+        WeeklySummaryCard(stats)
 
         Button(onClick = {
             val sendIntent = Intent(Intent.ACTION_SEND).apply {
