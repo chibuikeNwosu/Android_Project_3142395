@@ -85,7 +85,7 @@ import androidx.navigation.compose.rememberNavController
                 composable(Routes.HISTORY) { PlaceholderScreen("Trip History") }
                 composable(Routes.VEHICLES) { PlaceholderScreen("Vehicles") }
                 composable(Routes.REPORT) { PlaceholderScreen("Weekly Report") }
-                composable(Routes.SETTINGS) { PlaceholderScreen("Settings") }
+                composable(Routes.SETTINGS) { SettingsScreen() }
             }
         }
     }
