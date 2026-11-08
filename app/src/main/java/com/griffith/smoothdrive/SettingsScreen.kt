@@ -32,6 +32,8 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
     val store = remember { SettingsStore(context) }
     var settings by remember { mutableStateOf(store.load()) }
     var saved by remember { mutableStateOf(false) }
+    val emailValid = settings.ownerEmail.isBlank() ||
+            android.util.Patterns.EMAIL_ADDRESS.matcher(settings.ownerEmail).matches()
 
     Column(
         modifier = modifier
@@ -45,8 +47,10 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
         OutlinedTextField(
             value = settings.businessName,
             onValueChange = {
-                settings = settings.copy(businessName = it)
-                saved = false
+                if (it.length <= 40) {
+                    settings = settings.copy(businessName = it)
+                    saved = false
+                }
             },
             label = { Text("Business name") },
             singleLine = true,
@@ -96,7 +100,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
             )
         }
 
-        Button(onClick = {
+        Button(enabled = emailValid, onClick = {
             store.save(settings)
             saved = true
         }) { Text("Save") }
