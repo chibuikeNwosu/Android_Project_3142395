@@ -27,6 +27,10 @@ import androidx.navigation.compose.rememberNavController
 
 
 
+/*
+One place for every screen in the app, so a route is never mistyped in two places.
+*/
+
     object Routes {
         const val DASHBOARD = "dashboard"
         const val LIVE_TRIP = "live_trip"
@@ -38,6 +42,10 @@ import androidx.navigation.compose.rememberNavController
 
     data class BottomItem(val route: String, val label: String, val icon: ImageVector)
 
+/*
+This is the root of the UI. It builds the bottom navigation bar and the navigation graph
+ that swaps in the screen matching the current route.
+*/
     @Composable
     fun SmoothDriveApp() {
         val navController = rememberNavController()

@@ -20,6 +20,9 @@ import androidx.compose.runtime.remember
 
 private const val TIPS_URL = "https://www.seai.ie/about/tools/energyacademy"
 
+/*
+This file shows the weekly summary with two buttons that use implicit intents, one shares the report as a text, and the other button opens an eco-driving tips page
+*/
 @Composable
 fun WeeklyReportScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current

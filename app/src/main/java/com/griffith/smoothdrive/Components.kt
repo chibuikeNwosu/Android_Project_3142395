@@ -12,6 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+
+/*
+This file represents a reusable card showing the week's events per 100 km, trips and distance
+it is used on the dashboard and the weekly report so the numbers can never disagree
+*/
 @Composable
 fun WeeklySummaryCard(stats: WeeklyStats, modifier: Modifier = Modifier) {
     Card(

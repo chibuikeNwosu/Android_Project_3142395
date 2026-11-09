@@ -17,6 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.griffith.smoothdrive.ui.theme.SmoothDriveTheme
 
+/*
+This is a second screen, opened with an explicit intent from Trip History. It reads the trip's details from the intent extras and shows them and it is declared in the manifest to prevent
+the app from crashing
+*/
 class TripDetailActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

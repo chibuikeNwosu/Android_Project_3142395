@@ -43,3 +43,8 @@ fun DashboardScreen(
         OutlinedButton(onClick = onOpenReport) { Text("Weekly Report") }
     }
 }
+
+/*
+This file is a temporary screen that centers its title. Reused for every screen not built yet
+like the live Trip and Vehicles, So that I do not have to write many identical composables
+*/

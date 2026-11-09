@@ -26,12 +26,19 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 
+/*
+This is a form for the business name, owner email, units and the harsh event threshold.
+Edits are held in state and are only written to storage when save is pressed.
+*/
 @Composable
 fun SettingsScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current
+//    one store for the life of this screen
     val store = remember { SettingsStore(context) }
+//    The current form value. Changing this state makes compose redraw the screen
     var settings by remember { mutableStateOf(store.load()) }
     var saved by remember { mutableStateOf(false) }
+//    Input validation
     val emailValid = settings.ownerEmail.isBlank() ||
             android.util.Patterns.EMAIL_ADDRESS.matcher(settings.ownerEmail).matches()
 
@@ -46,6 +53,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
 
         OutlinedTextField(
             value = settings.businessName,
+//            This only accepts up to 40 characters so the input cannot grow without a limit
             onValueChange = {
                 if (it.length <= 40) {
                     settings = settings.copy(businessName = it)

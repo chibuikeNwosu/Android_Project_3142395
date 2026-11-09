@@ -17,3 +17,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+/* This is the Main activity file, the apps entry point. This file applies the green theme and hands the whole
+screen to the smoothDriveApp.
+*/

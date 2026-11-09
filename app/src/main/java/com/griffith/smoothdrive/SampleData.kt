@@ -27,3 +27,8 @@ fun weeklyStatsOf(trips: List<TripSummary>) = WeeklyStats(
     distanceKm = trips.sumOf { it.distanceKm },
     harshEvents = trips.sumOf { it.harshEvents }
 )
+
+
+/*
+This file is a temporary placeholder for my trip data before I build the database in milestone 2
+*/

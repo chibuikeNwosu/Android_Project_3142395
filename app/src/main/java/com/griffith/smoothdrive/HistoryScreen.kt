@@ -41,3 +41,11 @@ fun HistoryScreen(
         }
     }
 }
+
+/*
+
+This file shows the sample trips as a scrolling list of cards using the lazy column, it only draws
+the rows currently on screen, so it stays fast with long lists, although the screen only report which trip
+was tapped and the caller decided what to do next
+
+*/
