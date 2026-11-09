@@ -57,6 +57,6 @@ fun WeeklyReportScreen(modifier: Modifier = Modifier) {
             } catch (e: ActivityNotFoundException) {
                 Toast.makeText(context, "No browser available", Toast.LENGTH_SHORT).show()
             }
-        }) { Text("Eco-driving tips (SEAI)") }
+        }) { Text("Need Some tips on Eco-driving ? check out (SEAI)") }
     }
 }
