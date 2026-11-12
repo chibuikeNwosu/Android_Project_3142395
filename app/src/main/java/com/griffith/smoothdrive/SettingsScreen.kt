@@ -73,6 +73,8 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
             },
             label = { Text("Owner email") },
             singleLine = true,
+            isError = !emailValid,
+            supportingText = { if (!emailValid) Text("Enter a valid email address") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier.fillMaxWidth()
         )
