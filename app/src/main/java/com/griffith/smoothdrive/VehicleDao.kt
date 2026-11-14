@@ -24,4 +24,5 @@ interface VehicleDao {
 
     @Delete
     suspend fun delete(vehicle: Vehicle)
+
 }
