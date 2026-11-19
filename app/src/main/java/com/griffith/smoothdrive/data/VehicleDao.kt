@@ -1,4 +1,4 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.data
 
 import androidx.room3.Dao
 import androidx.room3.Delete

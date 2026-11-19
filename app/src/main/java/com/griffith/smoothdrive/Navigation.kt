@@ -105,7 +105,7 @@ This is the root of the UI. It builds the bottom navigation bar and the navigati
                         context.startActivity(intent)
                     })
                 }
-                composable(Routes.VEHICLES) { PlaceholderScreen("Vehicles") }
+                composable(Routes.VEHICLES) { VehiclesScreen() }
                 composable(Routes.REPORT) { WeeklyReportScreen() }
                 composable(Routes.SETTINGS) { SettingsScreen() }
             }

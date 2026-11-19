@@ -3,6 +3,8 @@ package com.griffith.smoothdrive
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.griffith.smoothdrive.data.AppDatabase
+import com.griffith.smoothdrive.data.Vehicle
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn

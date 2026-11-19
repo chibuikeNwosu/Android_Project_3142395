@@ -17,6 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.griffith.smoothdrive.data.Vehicle
 
 /**
  * Lists the vehicles stored in the database. The list updates by itself whenever

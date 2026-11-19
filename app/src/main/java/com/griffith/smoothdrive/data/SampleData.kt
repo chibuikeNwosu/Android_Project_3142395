@@ -1,4 +1,4 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.data
 
 data class TripSummary(
     val id: Int,

@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.griffith.smoothdrive.data.SettingsStore
 
 /*
 This is a form for the business name, owner email, units and the harsh event threshold.

@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.remember
+import com.griffith.smoothdrive.data.sampleTrips
+import com.griffith.smoothdrive.data.weeklyStatsOf
 
 private const val TIPS_URL = "https://www.seai.ie/about/tools/energyacademy"
 
