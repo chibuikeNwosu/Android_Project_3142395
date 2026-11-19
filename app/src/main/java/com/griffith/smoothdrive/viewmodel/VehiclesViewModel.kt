@@ -1,4 +1,4 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
