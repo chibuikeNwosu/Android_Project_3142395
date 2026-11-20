@@ -35,8 +35,9 @@ fun DashboardScreen(
         modifier = modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
+
     ) {
-        Text("Dashboard", style = MaterialTheme.typography.headlineMedium)
+        Text("Dashboards", style = MaterialTheme.typography.headlineMedium)
 
         val stats = remember { weeklyStatsOf(sampleTrips) }
         WeeklySummaryCard(stats)
