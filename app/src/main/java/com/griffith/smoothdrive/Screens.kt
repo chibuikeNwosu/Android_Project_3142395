@@ -43,7 +43,7 @@ fun DashboardScreen(
         WeeklySummaryCard(stats)
 
         Button(onClick = onStartTrip) { Text("Start Trip") }
-        OutlinedButton(onClick = onOpenReport) { Text("Weekly Report") }
+        OutlinedButton(onClick = onOpenReport) { Text("Weekly Reports") }
     }
 }
 
