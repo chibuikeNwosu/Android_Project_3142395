@@ -30,7 +30,7 @@ import com.griffith.smoothdrive.ui.screens.VehiclesScreen
 import com.griffith.smoothdrive.ui.screens.WeeklyReportScreen
 import com.griffith.smoothdrive.ui.screens.DashboardScreen
 import com.griffith.smoothdrive.ui.components.PlaceholderScreen
-
+import com.griffith.smoothdrive.ui.screens.LiveTripScreen
 
 
 /*
@@ -133,6 +133,7 @@ This is the root of the UI. It builds the bottom navigation bar and the navigati
                 composable(Routes.VEHICLES) { VehiclesScreen() }
                 composable(Routes.REPORT) { WeeklyReportScreen() }
                 composable(Routes.SETTINGS) { SettingsScreen() }
+                composable(Routes.LIVE_TRIP) { LiveTripScreen() }
             }
         }
     }
