@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TripDetailActivity"
+            android:name=".ui.screens.TripDetailActivity"
             android:exported="false" />
     </application>
 

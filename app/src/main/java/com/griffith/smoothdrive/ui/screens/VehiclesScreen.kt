@@ -1,4 +1,4 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

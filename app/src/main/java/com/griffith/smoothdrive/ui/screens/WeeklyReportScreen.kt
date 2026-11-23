@@ -1,4 +1,4 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.ui.screens
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.remember
+import com.griffith.smoothdrive.ui.components.WeeklySummaryCard
 import com.griffith.smoothdrive.data.sampleTrips
 import com.griffith.smoothdrive.data.weeklyStatsOf
 

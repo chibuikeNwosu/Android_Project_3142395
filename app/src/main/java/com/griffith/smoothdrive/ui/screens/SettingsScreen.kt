@@ -1,5 +1,6 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.ui.screens
 
+import android.util.Patterns
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -41,7 +42,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
     var saved by remember { mutableStateOf(false) }
 //    Input validation
     val emailValid = settings.ownerEmail.isBlank() ||
-            android.util.Patterns.EMAIL_ADDRESS.matcher(settings.ownerEmail).matches()
+            Patterns.EMAIL_ADDRESS.matcher(settings.ownerEmail).matches()
 
     Column(
         modifier = modifier

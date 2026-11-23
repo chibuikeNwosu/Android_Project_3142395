@@ -1,4 +1,4 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

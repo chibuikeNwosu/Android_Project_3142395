@@ -1,4 +1,4 @@
-package com.griffith.smoothdrive
+package com.griffith.smoothdrive.ui.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

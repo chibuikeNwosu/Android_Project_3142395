@@ -23,7 +23,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-
+import com.griffith.smoothdrive.ui.screens.TripDetailActivity
+import com.griffith.smoothdrive.ui.screens.HistoryScreen
+import com.griffith.smoothdrive.ui.screens.SettingsScreen
+import com.griffith.smoothdrive.ui.screens.VehiclesScreen
+import com.griffith.smoothdrive.ui.screens.WeeklyReportScreen
+import com.griffith.smoothdrive.ui.screens.DashboardScreen
+import com.griffith.smoothdrive.ui.components.PlaceholderScreen
 
 
 
@@ -88,45 +94,45 @@ This is the root of the UI. It builds the bottom navigation bar and the navigati
                 modifier = Modifier.padding(innerPadding)
             ) {
                 composable(Routes.DASHBOARD) {
-                    _root_ide_package_.com.griffith.smoothdrive.DashboardScreen(
+                    DashboardScreen(
                         onStartTrip = { navController.navigate(Routes.LIVE_TRIP) },
                         onOpenReport = { navController.navigate(Routes.REPORT) }
                     )
                 }
                 composable(Routes.LIVE_TRIP) {
-                    _root_ide_package_.com.griffith.smoothdrive.PlaceholderScreen(
+                    PlaceholderScreen(
                         "Live Trip"
                     )
                 }
                 composable(Routes.HISTORY) {
-                    _root_ide_package_.com.griffith.smoothdrive.HistoryScreen(onTripClick = { trip ->
+                    HistoryScreen(onTripClick = { trip ->
                         val intent = Intent(
                             context,
-                            _root_ide_package_.com.griffith.smoothdrive.TripDetailActivity::class.java
+                            TripDetailActivity::class.java
                         ).apply {
                             putExtra(
-                                _root_ide_package_.com.griffith.smoothdrive.TripDetailActivity.Companion.EXTRA_TITLE,
+                                TripDetailActivity.EXTRA_TITLE,
                                 trip.title
                             )
                             putExtra(
-                                _root_ide_package_.com.griffith.smoothdrive.TripDetailActivity.Companion.EXTRA_DATE,
+                                TripDetailActivity.EXTRA_DATE,
                                 trip.date
                             )
                             putExtra(
-                                _root_ide_package_.com.griffith.smoothdrive.TripDetailActivity.Companion.EXTRA_DISTANCE,
+                                TripDetailActivity.EXTRA_DISTANCE,
                                 trip.distanceKm
                             )
                             putExtra(
-                                _root_ide_package_.com.griffith.smoothdrive.TripDetailActivity.Companion.EXTRA_EVENTS,
+                                TripDetailActivity.EXTRA_EVENTS,
                                 trip.harshEvents
                             )
                         }
                         context.startActivity(intent)
                     })
                 }
-                composable(Routes.VEHICLES) { _root_ide_package_.com.griffith.smoothdrive.VehiclesScreen() }
-                composable(Routes.REPORT) { _root_ide_package_.com.griffith.smoothdrive.WeeklyReportScreen() }
-                composable(Routes.SETTINGS) { _root_ide_package_.com.griffith.smoothdrive.SettingsScreen() }
+                composable(Routes.VEHICLES) { VehiclesScreen() }
+                composable(Routes.REPORT) { WeeklyReportScreen() }
+                composable(Routes.SETTINGS) { SettingsScreen() }
             }
         }
     }
